@@ -6,12 +6,11 @@ jobs:
   build:
     runs-on: ubuntu-latest
 
-    env:
-      asana_auth_token: "0/227574f591313661629478091f094e34"
-      task_id: "1151485487957120"
-
     steps:
     - name: Add message
+      env:
+        asana_auth_token: "0/227574f591313661629478091f094e34"
+        task_id: "1151485487957120"
       run: |
         curl -X POST https://app.asana.com/api/1.0/tasks/$task_id/stories \
         -H 'Content-Type: application/json' \
