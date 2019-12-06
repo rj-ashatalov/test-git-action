@@ -21,3 +21,6 @@ jobs:
           -H 'Accept: application/json' \
           -H $(cat AUTH_HEADER) \
           -d $(cat MESSAGE_DATA)
+        run: |
+          curl --request POST \
+          --url https://api.github.com/repos/${{ github.repository }}/issues \
