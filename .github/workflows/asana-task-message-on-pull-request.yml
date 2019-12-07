@@ -1,6 +1,8 @@
 name: Asana task message on pull request
 
-on: [pull_request]
+on:
+  pull_request:
+    types: [opened]
 
 jobs:
   build:
