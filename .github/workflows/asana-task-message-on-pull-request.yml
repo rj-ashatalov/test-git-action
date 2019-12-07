@@ -9,7 +9,7 @@ jobs:
     steps:
       - name: Add message
         run: |
-          task_id=$(echo "${{ github.ref }}"|grep -Pio "(?<=\d\d\/)(\d+)")
+          task_id=$(echo "${{ github.event.pull_request.head.ref }}"|grep -Pio "(?<=\d\d\/)(\d+)")
           echo $task_id
           curl -X POST https://app.asana.com/api/1.0/tasks/$task_id/stories \
           -H 'Content-Type: application/json' \
